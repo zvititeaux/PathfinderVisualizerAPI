@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PathfinderVisualizerAPI", "PathfinderVisualizerAPI.csproj", "{65D044FE-F45B-4411-A8A7-54E200E65D46}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65D044FE-F45B-4411-A8A7-54E200E65D46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65D044FE-F45B-4411-A8A7-54E200E65D46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65D044FE-F45B-4411-A8A7-54E200E65D46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65D044FE-F45B-4411-A8A7-54E200E65D46}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {025C1DF1-18BB-41A0-8F01-DFD9F825B6CB}
+	EndGlobalSection
+EndGlobal
