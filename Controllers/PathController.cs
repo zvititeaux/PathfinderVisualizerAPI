@@ -5,6 +5,7 @@
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
     using PathfinderVisualizerAPI.Data;
+    using PathfinderVisualizerAPI.Models;
     using System.Runtime.CompilerServices;
     using MvcRoute = Microsoft.AspNetCore.Mvc.RouteAttribute;
 
@@ -15,22 +16,33 @@
         private readonly ApplicationDbContext _context; // Assume you have set up your DB context
 
         public PathController(ApplicationDbContext context)
+
         {
             _context = context;
         }
 
         [HttpPost]
-        public async Task<IActionResult> SavePath([FromBody] PathfinderVisualizerAPI.Models.PathModel pathData)
+        [Route("api/savepath")]
+        public async Task<IActionResult> SavePath([FromBody] PathfindingModels pathData)
         {
             if (pathData == null)
             {
                 return BadRequest("Invalid path data.");
             }
 
-            _context.AlgorithmPath.Add(pathData);
-            await _context.SaveChangesAsync();
+            // TODO:If you have authentication, consider adding user-related data
 
-            return Ok(new { Message = "Path saved successfully!" });
+            try
+            {
+                await _context.Paths.AddAsync(pathData);
+                await _context.SaveChangesAsync();
+                return Ok(new { success = true, message = "Path saved successfully." });
+            }
+            catch (Exception)
+            {
+                // Log the exception 
+                return StatusCode(500, "Internal server error.");
+            }
         }
     }
 }

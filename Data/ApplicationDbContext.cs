@@ -7,7 +7,7 @@ namespace PathfinderVisualizerAPI.Data
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) {}
 
-        public DbSet<PathModel> AlgorithmPath { get; set; }
+        public DbSet<PathfindingModels> Paths { get; set; }
 
     }
 }
